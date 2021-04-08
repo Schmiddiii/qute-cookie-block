@@ -83,14 +83,8 @@ impl Blocker for FileBlocker {
                                     }
                                     let attr = a.unwrap();
                                     (
-                                        String::from_utf8(attr.clone().key.to_vec()).unwrap_or({
-                                            FileBlocker::panic_file(&path);
-                                            "".to_string()
-                                        }),
-                                        String::from_utf8(attr.value.into_owned()).unwrap_or({
-                                            FileBlocker::panic_file(&path);
-                                            "".to_string()
-                                        }),
+                                        String::from_utf8(attr.clone().key.to_vec()).unwrap(),
+                                        String::from_utf8(attr.value.into_owned()).unwrap(),
                                     )
                                 })
                                 .collect();
