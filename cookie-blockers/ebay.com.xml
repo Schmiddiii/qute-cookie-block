@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <!-- TODO: You cannot block cookies on ebay -->
+  <click element="#gdpr-banner > div.gdpr-banner__wrapper > div > a"/>
+</block>

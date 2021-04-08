@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#EDu5ze > div"/>
+  <!-- TODO: Introduce timeout -->
+  <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(4) > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>
+  <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(5) > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>
+  <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(6) > div.IgeUeb > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>
+</block>

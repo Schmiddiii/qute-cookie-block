@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <!-- TODO: Clicking on the button does not work -->
+  <!-- <click element="#cookie-disclosure > div.cta-btn-container > button:nth-child(2)"/> -->
+  <!-- TODO: Workaround: Close -->
+  <click element="#cookie-disclosure > div.btn-container > button > span.icon-close"/>
+</block>

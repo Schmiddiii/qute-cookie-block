@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#artdeco-global-alert-container > div.artdeco-global-alert.artdeco-global-alert--NOTICE.artdeco-global-alert--COOKIE_CONSENT > section > div > div.artdeco-global-alert-action__wrapper > button:nth-child(1)"/>
+  <!-- TODO: Delay -->
+  <!-- TODO: Introduce going back -->
+</block>

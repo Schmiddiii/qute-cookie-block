@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#gdpr-single-choice-overlay > div > div.wt-overlay__footer.wt-pt-xs-3 > div.wt-overlay__footer__action.wt-display-flex-md.wt-flex-grow-md-1.wt-order-xs-1.wt-order-md-neg1.wt-justify-content-flex-end > button"/>
+  <!-- TODO: Introduce timeout -->
+  <click element="#gdpr-privacy-settings > div > div.wt-overlay__footer.wt-align-items-center > div.wt-overlay__footer__action > div > div:nth-child(3) > button"/>
+</block>
