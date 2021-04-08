@@ -1,6 +1,7 @@
 mod blocker;
 mod blockers;
 mod commands;
+mod file_blocker;
 
 use std::env;
 use std::fs::OpenOptions;
@@ -14,10 +15,11 @@ fn main() {
     match (
         env::var("QUTE_MODE"),
         env::var("QUTE_FIFO"),
+        env::var("QUTE_DATA_DIR"),
         env::var("QUTE_URL"),
         env::var("QUTE_HTML"),
     ) {
-        (Ok(mode), Ok(fifo_path), Ok(url), Ok(html_path)) => {
+        (Ok(mode), Ok(fifo_path), Ok(data_path), Ok(url), Ok(html_path)) => {
             let mut fifo_file = OpenOptions::new()
                 .read(false)
                 .write(true)
@@ -35,7 +37,10 @@ fn main() {
                     .read_to_string(&mut html_str)
                     .expect("Could not read HTML file");
                 let html = Html::parse_document(&html_str);
-                let steps_opt = blocker::get_blocking_steps(&url, &html);
+
+                let blockers = blocker::get_blockers(&data_path);
+
+                let steps_opt = blocker::get_blocking_steps(blockers, &url, &html);
                 if let Some(steps) = steps_opt {
                     for step in steps {
                         writeln!(fifo_file, "{}", step).unwrap();

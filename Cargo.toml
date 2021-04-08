@@ -8,3 +8,5 @@ edition = "2018"
 
 [dependencies]
 scraper = "^0.12.0"
+url = "^2.2.0"
+quick-xml = "^0.22.0"
