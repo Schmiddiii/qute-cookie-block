@@ -1,8 +1,8 @@
 use crate::blocker::Blocker;
 use crate::commands::{Js, QuteCommand};
 
-use std::fs;
 use std::path::PathBuf;
+use std::{collections::HashMap, fs};
 
 use quick_xml::events::Event;
 use quick_xml::Reader;
@@ -73,53 +73,37 @@ impl Blocker for FileBlocker {
             loop {
                 match reader.read_event(&mut buf) {
                     // Pull each tag.
-                    Ok(Event::Empty(tag)) => match tag.name() {
-                        b"click" => {
-                            let element = tag
+                    Ok(Event::Empty(tag)) => {
+                        if let Ok(name) = std::str::from_utf8(tag.name()) {
+                            let attributes = tag
                                 .attributes()
-                                .filter(|a| {
-                                    if let Ok(a) = a.as_ref() {
-                                        a.key == b"element"
-                                    } else {
+                                .map(|a| {
+                                    if a.is_err() {
                                         FileBlocker::panic_file(&path);
-                                        false
                                     }
+                                    let attr = a.unwrap();
+                                    (
+                                        String::from_utf8(attr.clone().key.to_vec()).unwrap_or({
+                                            FileBlocker::panic_file(&path);
+                                            "".to_string()
+                                        }),
+                                        String::from_utf8(attr.value.into_owned()).unwrap_or({
+                                            FileBlocker::panic_file(&path);
+                                            "".to_string()
+                                        }),
+                                    )
                                 })
-                                .map(|a| a.unwrap().value)
-                                .next();
+                                .collect();
 
-                            if let Some(e) = element {
-                                commands.push(QuteCommand::JsEval(Js::Click(
-                                    String::from_utf8(e.into_owned()).unwrap(),
-                                )));
+                            if let Some(command) = make_command(name, &attributes) {
+                                commands.push(command);
                             } else {
                                 FileBlocker::panic_file(&path);
                             }
+                        } else {
+                            FileBlocker::panic_file(&path);
                         }
-                        b"js" => {
-                            let element = tag
-                                .attributes()
-                                .filter(|a| {
-                                    if let Ok(a) = a.as_ref() {
-                                        a.key == b"raw"
-                                    } else {
-                                        FileBlocker::panic_file(&path);
-                                        false
-                                    }
-                                })
-                                .map(|a| a.unwrap().value)
-                                .next();
-
-                            if let Some(e) = element {
-                                commands.push(QuteCommand::JsEval(Js::Raw(
-                                    String::from_utf8(e.into_owned()).unwrap(),
-                                )));
-                            } else {
-                                FileBlocker::panic_file(&path);
-                            }
-                        }
-                        _ => FileBlocker::panic_file(&path),
-                    },
+                    }
                     Ok(Event::Eof) => break,
                     Err(_) => FileBlocker::panic_file(&path),
                     _ => (),
@@ -129,6 +113,28 @@ impl Blocker for FileBlocker {
             commands
         } else {
             vec![]
+        }
+    }
+}
+
+fn make_command(name: &str, attributes: &HashMap<String, String>) -> Option<QuteCommand> {
+    match name {
+        "click" => {
+            if let Some(element) = attributes.get("element") {
+                return Some(QuteCommand::JsEval(Js::Click(element.to_string())));
+            } else {
+                return None;
+            }
+        }
+        "js" => {
+            if let Some(source) = attributes.get("source") {
+                return Some(QuteCommand::JsEval(Js::Raw(source.to_string())));
+            } else {
+                return None;
+            }
+        }
+        _ => {
+            return None;
         }
     }
 }
