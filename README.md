@@ -20,6 +20,7 @@ Just execute the `make.sh` in the repositories folder.
 ## Other
 Run `cargo build` in the repositories folder. 
 Copy the created binary from `target/debug/qute-cookie-block` to the userscripts directory of qutebrowser.
+Copy the folder `cookie-blockers` to the data directory of qutebrowser.
 
 # Running
 Run this script by executing `:spawn --userscript qute-cookie-block` in qutebrowser.
