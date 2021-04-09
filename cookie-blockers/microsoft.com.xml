@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#wcpConsentBannerCtrl > div._2j0fmugLb1FgYz6KPuB91w > button:nth-child(2)"/>
+  <wait/>
+  <click element="#_1dp8Vp5m3HwAqGx8qBmFV2_c1_reject"/>
+  <click element="#_1dp8Vp5m3HwAqGx8qBmFV2_c2_reject"/>
+  <click element="#_1dp8Vp5m3HwAqGx8qBmFV2_c3_reject"/>
+  <click element="#wcpCookiePreferenceCtrl > div.AFsJE948muYyzCMktdzuk > div > div.nohp3sIG12ZBhzcMnPala > button._3tOu1FJ59c_xz_PmI1lKV5._1zNQOqxpBFSokeCLGi_hGr"/>
+</block>

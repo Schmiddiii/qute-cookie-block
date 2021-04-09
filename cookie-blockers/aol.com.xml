@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#consent-page > div > div > div > form > div.wizard-body > div.actions.couple > a"/>
+  <wait/>
+  <click element="#select-legit-all-purpose > span.toggleAll.toggle-accpet-all"/>
+  <click element="#consent-page > div > form > div.page-footer > div > div > button"/>
+</block>

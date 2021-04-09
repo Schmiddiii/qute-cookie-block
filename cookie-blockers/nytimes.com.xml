@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <!-- CANNOT OPT OUT OF EVERYTHING -->
+  <!-- TODO: Does not work? -->
+  <click element="#site-content > div.gdpr.shown.expanded.expanded-dock.css-17nqy7q.e1x0szx60 > div.css-183a15u.ejw0p350 > div > div.css-1s2i4vk > a"/>
+  <debug/>
+  <wait/>
+  <debug msg="After"/>
+
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(1) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(2) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(3) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(4) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(5) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(6) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(7) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(8) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(9) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(10) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(11) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(12) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-2 > tbody > tr:nth-child(14) > td:nth-child(5) > a:nth-child(2)"/>
+
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(1) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(2) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(3) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(4) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(5) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(6) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(7) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(8) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(9) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(10) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(11) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(12) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(13) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(14) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(15) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(16) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(17) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(18) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-3 > tbody > tr:nth-child(19) > td:nth-child(5) > a:nth-child(2)"/>
+
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(1) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(2) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(3) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(4) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(7) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#gdpr-faq-cookie-table-4 > tbody > tr:nth-child(8) > td:nth-child(5) > a:nth-child(2)"/>
+  <click element="#opt-out-of-new-york-times-nonessential-trackers"/>
+
+  <!-- TODO: Close the new tab -->
+  <!-- TODO: Close the banner -->
+</block>
