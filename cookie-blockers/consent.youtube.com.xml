@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <block>
   <click element="#yDmH0d > c-wiz > div > div > div.NIoIEf > div.G4njw > div.qqtRac > div > div > div > a"/>
-  <!-- TODO: Add sleep -->
+  <wait/>
   <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(3) > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>
   <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(4) > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>
   <click element="#yDmH0d > c-wiz > div > div > div > div.VP4fnf > div:nth-child(5) > div.IgeUeb > div.uScs5d > div > div.uScs5d > div:nth-child(1) > div > button"/>

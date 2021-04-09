@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <block>
+  <!-- WARNING: The cookie-free version of this websites looks very different-->
   <click element="#modal-host > div > div > div > div > div > div > div.css-zndjj2 > a"/>
-  <!-- TODO: Add delay-->
+  <wait time="1000"/>
   <click element="#__next > div.css-qbih8b > div > button.css-1glzvq1"/>
 </block>

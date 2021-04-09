@@ -127,6 +127,13 @@ fn make_command(name: &str, attributes: &HashMap<String, String>) -> Option<Qute
                 return None;
             }
         }
+        "wait" => {
+            if let Some(Ok(time)) = attributes.get("time").map(|s| s.parse()) {
+                return Some(QuteCommand::Timeout(Some(time)));
+            } else {
+                return Some(QuteCommand::Timeout(None));
+            }
+        }
         _ => {
             return None;
         }

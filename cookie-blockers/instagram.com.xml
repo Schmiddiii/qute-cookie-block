@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <block>
-  <--! TODO: You cannot block cookies, only accept? -->
+  <!-- TODO: You cannot block cookies, only accept? -->
   <click element="body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm"/>
 </block>

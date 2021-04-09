@@ -43,8 +43,7 @@ fn main() {
                 let steps_opt = blocker::get_blocking_steps(blockers, &url, &html);
                 if let Some(steps) = steps_opt {
                     for step in steps {
-                        writeln!(fifo_file, "{}", step).unwrap();
-                        fifo_file.flush().unwrap();
+                        step.execute(&mut fifo_file);
                     }
                 } else {
                     writeln!(
