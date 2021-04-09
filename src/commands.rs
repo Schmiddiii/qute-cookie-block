@@ -1,4 +1,5 @@
 use std::{
+    convert::TryFrom,
     fmt::{Display, Formatter, Result},
     fs::File,
     io::Write,
@@ -9,11 +10,18 @@ const DEFAULT_TIMEOUT: u64 = 500;
 pub enum QuteCommand {
     JsEval(Js),
     Timeout(Option<u64>),
+    Debug(DebugType, String),
 }
 
 pub enum Js {
     Click(String),
     Raw(String),
+}
+
+pub enum DebugType {
+    Error,
+    Info,
+    Warning,
 }
 
 impl QuteCommand {
@@ -36,6 +44,9 @@ impl Display for QuteCommand {
             QuteCommand::JsEval(js) => {
                 write!(f, "jseval -q {}", js)
             }
+            QuteCommand::Debug(debug_type, message) => {
+                write!(f, r#"message-{} {}"#, debug_type, message)
+            }
             _ => write!(f, ""),
         }
     }
@@ -48,6 +59,28 @@ impl Display for Js {
                 write!(f, r#"document.querySelector("{}").click()"#, selector)
             }
             Js::Raw(string) => write!(f, "{}", string),
+        }
+    }
+}
+
+impl Display for DebugType {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        match self {
+            DebugType::Error => write!(f, "error"),
+            DebugType::Info => write!(f, "info"),
+            DebugType::Warning => write!(f, "warning"),
+        }
+    }
+}
+
+impl TryFrom<String> for DebugType {
+    type Error = ();
+    fn try_from(string: String) -> std::result::Result<DebugType, ()> {
+        match &string[..] {
+            "error" => Ok(DebugType::Error),
+            "info" => Ok(DebugType::Info),
+            "warninng" => Ok(DebugType::Warning),
+            _ => Err(()),
         }
     }
 }

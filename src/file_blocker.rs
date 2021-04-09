@@ -1,8 +1,8 @@
-use crate::blocker::Blocker;
 use crate::commands::{Js, QuteCommand};
+use crate::{blocker::Blocker, commands::DebugType};
 
-use std::path::PathBuf;
 use std::{collections::HashMap, fs};
+use std::{convert::TryFrom, path::PathBuf};
 
 use quick_xml::events::Event;
 use quick_xml::Reader;
@@ -132,6 +132,22 @@ fn make_command(name: &str, attributes: &HashMap<String, String>) -> Option<Qute
                 return Some(QuteCommand::Timeout(Some(time)));
             } else {
                 return Some(QuteCommand::Timeout(None));
+            }
+        }
+        "debug" => {
+            let debug_type = attributes
+                .get("type")
+                .map(|s| DebugType::try_from(s.to_string()))
+                .unwrap_or(Ok(DebugType::Info));
+            let message = attributes
+                .get("msg")
+                .map(|s| s.to_string())
+                .unwrap_or("Debug".to_string());
+
+            if let Ok(debug_type) = debug_type {
+                return Some(QuteCommand::Debug(debug_type, message));
+            } else {
+                return None;
             }
         }
         _ => {
