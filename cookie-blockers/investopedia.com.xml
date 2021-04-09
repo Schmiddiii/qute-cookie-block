@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#onetrust-pc-btn-handler"/>
+  <wait/>
+  <click element="#onetrust-pc-sdk > div.ot-button-group-parent > div.ot-button-group > button.save-preference-btn-handler.onetrust-close-btn-handler"/>
+</block>

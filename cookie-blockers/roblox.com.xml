@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#cookie-link-manage"/>
+  <!-- TODO: Not sure clicking the right thing -->
+  <click element="#cookie-btn-allow"/>
+</block>

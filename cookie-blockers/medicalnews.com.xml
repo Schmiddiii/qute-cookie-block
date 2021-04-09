@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#modal-host > div > div > div > div > div > div > div.css-zndjj2 > a"/>
+  <wait time="1000"/>
+  <click element="#__next > div.css-1m0hjq0 > div > button.css-1mzn52w"/>
+</block>

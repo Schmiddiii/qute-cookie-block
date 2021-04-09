@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#manageCookiesLink"/>
+  <wait time="1000"/>
+  <click element="#performance"/>
+  <click element="#functional"/>
+  <click element="#submitCookiesBtn"/>
+</block>

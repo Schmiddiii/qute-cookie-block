@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="#onetrust-pc-btn-handler"/>
+  <click element="#cookie-preferences > div.save-preference-btn-container > button"/>
+</block>
