@@ -14,7 +14,11 @@ pub trait Blocker {
 }
 
 pub fn get_blockers(data_dir: &str) -> Vec<Box<dyn Blocker>> {
-    vec![Box::new(FileBlocker::new(data_dir)), Box::new(Fandom {})]
+    vec![
+        Box::new(FileBlocker::new(data_dir)),
+        Box::new(OneTrust {}),
+        Box::new(Fandom {}),
+    ]
 }
 
 pub fn get_blocking_steps(

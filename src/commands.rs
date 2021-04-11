@@ -45,7 +45,7 @@ impl Display for QuteCommand {
                 write!(f, "jseval -q {}", js)
             }
             QuteCommand::Debug(debug_type, message) => {
-                write!(f, r#"message-{} {}"#, debug_type, message)
+                write!(f, r#"message-{} "{}""#, debug_type, message)
             }
             _ => write!(f, ""),
         }

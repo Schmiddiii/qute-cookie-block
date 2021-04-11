@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<block>
-  <click element="#onetrust-pc-btn-handler"/>
-  <click element="#ot-group-id-C0002"/>
-  <click element="#onetrust-pc-sdk > div.ot-pc-footer > div.ot-btn-container > button"/>
-</block>
