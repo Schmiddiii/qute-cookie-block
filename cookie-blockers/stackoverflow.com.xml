@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<block>
+  <click element="body > div.ff-sans.ps-fixed.z-nav-fixed.ws4.sm\\:w-auto.p32.bg-black-750.fc-white.bar-lg.b16.l16.r16.js-consent-banner > div > button.grid--cell.s-btn.s-btn__filled.js-cookie-settings"/>
+  <wait time="1000"/>
+  <click element="#onetrust-pc-sdk > div > div.s-modal--footer.mt0.grid.gs8.gsx > button.grid--cell.s-btn.s-btn__primary.save-preference-btn-handler.onetrust-close-btn-handler.js-consent-banner-hide.js-consent-save"/>
+</block>
