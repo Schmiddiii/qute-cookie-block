@@ -22,6 +22,8 @@ Run `cargo build` in the repositories folder.
 Copy the created binary from `target/debug/qute-cookie-block` to the userscripts directory of qutebrowser.
 Copy the folder `cookie-blockers` to the data directory of qutebrowser.
 
+You can also take the binary and folder from the `Releases` tab, but they might outdated.
+
 # Running
 Run this script by executing `:spawn --userscript qute-cookie-block` in qutebrowser.
 As you probably don't want to type it out all the time, I recommend setting up a alias in `qute://settings`.
@@ -29,6 +31,6 @@ As you probably don't want to type it out all the time, I recommend setting up a
 # Contributing
 This userscript heavily depends on contributions to fill out the list of supported websites.
 Please try to contribute by submitting pull requests.
-Even if the rust code in this repository looks scary, I have tried to simplify the process of adding new websites.
+You do not even have to write any code, just XML.
 
 To learn more about how to contribute, please look at the [wiki](https://github.com/Schmiddiii/qute-cookie-block/wiki) of this repository.
