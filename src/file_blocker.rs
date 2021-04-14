@@ -120,6 +120,13 @@ fn make_command(name: &str, attributes: &HashMap<String, String>) -> Option<Qute
                 return None;
             }
         }
+        "remove" => {
+            if let Some(element) = attributes.get("element") {
+                return Some(QuteCommand::JsEval(Js::Remove(element.to_string())));
+            } else {
+                return None;
+            }
+        }
         "js" => {
             if let Some(source) = attributes.get("source") {
                 return Some(QuteCommand::JsEval(Js::Raw(source.to_string())));

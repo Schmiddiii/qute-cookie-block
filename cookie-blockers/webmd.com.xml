@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <block>
-  <!-- TODO: Does not work? -->
-  <click element="body > div:nth-child(16) > div.mainContent > div > div.bottom > a.rejectAll"/>
+  <remove element=".truste_box_overlay"/>
+  <remove element=".truste_overlay"/>
 </block>

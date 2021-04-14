@@ -15,6 +15,7 @@ pub enum QuteCommand {
 
 pub enum Js {
     Click(String),
+    Remove(String),
     Raw(String),
 }
 
@@ -57,6 +58,9 @@ impl Display for Js {
         match self {
             Js::Click(selector) => {
                 write!(f, r#"document.querySelector("{}").click()"#, selector)
+            }
+            Js::Remove(selector) => {
+                write!(f, r#"document.querySelector("{}").remove()"#, selector)
             }
             Js::Raw(string) => write!(f, "{}", string),
         }
