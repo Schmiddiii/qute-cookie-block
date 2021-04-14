@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<block>
-  <remove element=".truste_box_overlay"/>
-  <remove element=".truste_overlay"/>
-</block>
