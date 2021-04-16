@@ -1,5 +1,6 @@
 mod blocker;
 mod blockers;
+mod blocklist_blocker;
 mod commands;
 mod file_blocker;
 

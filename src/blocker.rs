@@ -1,4 +1,5 @@
 use crate::blockers::*;
+use crate::blocklist_blocker::BlocklistBlocker;
 use crate::commands::QuteCommand;
 use crate::file_blocker::FileBlocker;
 
@@ -21,6 +22,7 @@ pub fn get_blockers(data_dir: &str) -> Vec<Box<dyn Blocker>> {
         Box::new(Truste {}),
         Box::new(HuManity {}),
         Box::new(Fandom {}),
+        Box::new(BlocklistBlocker::new(data_dir)),
     ]
 }
 

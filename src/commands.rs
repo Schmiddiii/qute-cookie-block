@@ -16,6 +16,7 @@ pub enum QuteCommand {
 pub enum Js {
     Click(String),
     Remove(String),
+    RemoveAny(String),
     Raw(String),
 }
 
@@ -61,6 +62,13 @@ impl Display for Js {
             }
             Js::Remove(selector) => {
                 write!(f, r#"document.querySelector("{}").remove()"#, selector)
+            }
+            Js::RemoveAny(selector) => {
+                write!(
+                    f,
+                    r#"Array.prototype.slice.call(document.querySelectorAll("{}")).foreach(function(e, idx) {{e.remove()}})"#,
+                    selector
+                )
             }
             Js::Raw(string) => write!(f, "{}", string),
         }

@@ -27,7 +27,9 @@ impl FileBlocker {
             {
                 let entry = entry.unwrap();
                 let entry_path = entry.path();
-                if entry_path.is_file() {
+                if entry_path.is_file()
+                    && entry_path.extension().map(|s| s.to_str()) == Some(Some("yml"))
+                {
                     files.push(entry_path);
                 }
             }
