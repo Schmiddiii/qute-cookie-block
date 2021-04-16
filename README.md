@@ -1,11 +1,11 @@
 # qute-cookie-block
 Blocking cookies for the qutebrowser.
 
-# WARNING
-This is currently very alpha software and almost no websites are supported.
-
 # How it works
 This userscript tries to block the cookies of a website by clicking on HTML elements, like buttons.
+To support many websites, it also uses custom blocklist made for Chrome/Firefox plugins like [ublock origin](https://ublockorigin.com/).
+Look at `Installation of a blocklist` for more details.
+
 Note that this was designed for [qutebrowser](https://qutebrowser.org/) and will not work on any other browsers.
 
 # Installation
@@ -23,6 +23,12 @@ Copy the created binary from `target/debug/qute-cookie-block` to the userscripts
 Copy the folder `cookie-blockers` to the data directory of qutebrowser.
 
 You can also take the binary and folder from the `Releases` tab, but they might outdated.
+
+## Installation of a blocklist
+This program supports blocklists/filterlists, that are written for [ublock origin](https://ublockorigin.com/).
+To do that, download the blocklist you want (I recommend [this one](https://github.com/easylist/easylist/blob/master/easylist_cookie/easylist_cookie_general_hide.txt)), rename it to `blocklist.txt` (important!) and put it in your qutebrowser data directory under `cookie-blockers` in (`~/.local/qutebrowser/` in Linux).
+
+Note that currently only very basic features of the blocklists are supported.
 
 # Running
 Run this script by executing `:spawn --userscript qute-cookie-block` in qutebrowser.
