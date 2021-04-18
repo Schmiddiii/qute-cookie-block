@@ -45,13 +45,8 @@ impl Blocker for OneTrust {
                 .iter()
                 .fold(first, |acc, item| format!("{}, {}", acc, item));
 
-            let js_command = format!(
-                r#"Array.prototype.slice.call(document.querySelectorAll("{}")).forEach(function(e, idx) {{e.click()}})"#,
-                combined_selectors
-            );
-
             // Click on all checked boxes.
-            commands.push(QuteCommand::JsEval(Js::Raw(js_command)));
+            commands.push(QuteCommand::JsEval(Js::ClickAny(combined_selectors)));
             // Click on "save preferences"
             commands.push(QuteCommand::JsEval(Js::Click(ONETRUST_CONFIM.to_string())));
         }

@@ -21,6 +21,7 @@ pub fn get_blockers(data_dir: &str) -> Vec<Box<dyn Blocker>> {
         Box::new(CookieNotice {}),
         Box::new(Truste {}),
         Box::new(HuManity {}),
+        Box::new(Fc {}),
         Box::new(Fandom {}),
         Box::new(BlocklistBlocker::new(data_dir)),
     ]

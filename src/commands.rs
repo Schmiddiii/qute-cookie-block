@@ -15,6 +15,7 @@ pub enum QuteCommand {
 
 pub enum Js {
     Click(String),
+    ClickAny(String),
     Remove(String),
     RemoveAny(String),
     Raw(String),
@@ -60,13 +61,20 @@ impl Display for Js {
             Js::Click(selector) => {
                 write!(f, r#"document.querySelector("{}").click()"#, selector)
             }
+            Js::ClickAny(selector) => {
+                write!(
+                    f,
+                    r#"Array.prototype.slice.call(document.querySelectorAll("{}")).forEach(function(e, idx) {{e.click()}})"#,
+                    selector
+                )
+            }
             Js::Remove(selector) => {
                 write!(f, r#"document.querySelector("{}").remove()"#, selector)
             }
             Js::RemoveAny(selector) => {
                 write!(
                     f,
-                    r#"Array.prototype.slice.call(document.querySelectorAll("{}")).foreach(function(e, idx) {{e.remove()}})"#,
+                    r#"Array.prototype.slice.call(document.querySelectorAll("{}")).forEach(function(e, idx) {{e.remove()}})"#,
                     selector
                 )
             }
