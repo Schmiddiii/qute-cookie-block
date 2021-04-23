@@ -28,26 +28,29 @@ impl BlocklistBlocker {
 
     /// Returns the blocked ids and classes, in this order.
     fn get_blocked(&self) -> (HashSet<String>, HashSet<String>) {
-        let file_content = std::fs::read_to_string(&self.file).expect("Failed to read blocklist");
-        let valid_lines = file_content
-            .lines()
-            .filter(|s| !s.starts_with("!") && s.len() >= 2)
-            .filter(|s| {
-                s.chars()
-                    .skip(3)
-                    .all(|c| c == '_' || c == '-' || c.is_ascii_alphanumeric())
-            })
-            .map(|s| s.split_at(2).1);
-        let ids = valid_lines
-            .clone()
-            .filter(|s| s.starts_with("#"))
-            .map(|s| s.split_at(1).1.to_string())
-            .collect();
-        let classes = valid_lines
-            .filter(|s| s.starts_with("."))
-            .map(|s| s.split_at(1).1.to_string())
-            .collect();
-        (ids, classes)
+        if let Ok(file_content) = std::fs::read_to_string(&self.file) {
+            let valid_lines = file_content
+                .lines()
+                .filter(|s| !s.starts_with("!") && s.len() >= 2)
+                .filter(|s| {
+                    s.chars()
+                        .skip(3)
+                        .all(|c| c == '_' || c == '-' || c.is_ascii_alphanumeric())
+                })
+                .map(|s| s.split_at(2).1);
+            let ids = valid_lines
+                .clone()
+                .filter(|s| s.starts_with("#"))
+                .map(|s| s.split_at(1).1.to_string())
+                .collect();
+            let classes = valid_lines
+                .filter(|s| s.starts_with("."))
+                .map(|s| s.split_at(1).1.to_string())
+                .collect();
+            (ids, classes)
+        } else {
+            (HashSet::new(), HashSet::new())
+        }
     }
 }
 
